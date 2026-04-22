@@ -1,1643 +1,503 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estudio de Mercado — ADAM FATMI /España 2024-2025</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<style>
-  :root {
-    --ink: #0f0e0c;
-    --paper: #f5f2ec;
-    --cream: #ede9e0;
-    --gold: #b8860b;
-    --gold-light: #d4a017;
-    --rust: #8b3a0f;
-    --teal: #0d5c63;
-    --teal-light: #1a7a84;
-    --slate: #2c3e50;
-    --muted: #6b6560;
-    --border: #d4cfc5;
-    --white: #fff;
-    --red-flag: #c0392b;
-    --green-flag: #1a6b3a;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'IBM Plex Sans', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    font-size: 15px;
-    line-height: 1.75;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBERIA TRADE GLOBAL - Exportación de Azafrán Gourmet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  /* PORTADA */
-  .cover {
-    background: var(--ink);
-    color: var(--paper);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 60px;
-    position: relative;
-    overflow: hidden;
-  }
-  .cover::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(ellipse, rgba(184,134,11,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .cover-tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 40px;
-    border-left: 3px solid var(--gold);
-    padding-left: 16px;
-  }
-  .cover h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(42px, 6vw, 80px);
-    font-weight: 900;
-    line-height: 1.05;
-    margin-bottom: 24px;
-    max-width: 780px;
-  }
-  .cover h1 em {
-    font-style: normal;
-    color: var(--gold);
-  }
-  .cover-sub {
-    font-size: 18px;
-    font-weight: 300;
-    color: rgba(245,242,236,0.65);
-    max-width: 560px;
-    margin-bottom: 60px;
-    line-height: 1.6;
-  }
-  .cover-meta {
-    display: flex;
-    gap: 48px;
-    flex-wrap: wrap;
-  }
-  .cover-meta-item label {
-    display: block;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(245,242,236,0.45);
-    margin-bottom: 4px;
-  }
-  .cover-meta-item span {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--paper);
-  }
-  .cover-divider {
-    width: 60px;
-    height: 2px;
-    background: var(--gold);
-    margin-bottom: 48px;
-  }
+        :root {
+            --navy: #0a2540;
+            --gold: #d4af37;
+            --red: #c41e3a;
+            --cream: #f5f2ec;
+            --light-gray: #e8e6e1;
+            --dark-gray: #2d3748;
+            --accent-teal: #1a7a84;
+        }
 
-  /* NAV */
-  .toc-nav {
-    background: var(--cream);
-    border-bottom: 1px solid var(--border);
-    padding: 20px 60px;
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .toc-nav a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    padding: 6px 14px;
-    border-radius: 3px;
-    transition: all 0.2s;
-    border: 1px solid transparent;
-  }
-  .toc-nav a:hover {
-    background: var(--white);
-    color: var(--teal);
-    border-color: var(--border);
-  }
+        html, body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--cream);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
 
-  /* SECCIONES */
-  .section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 80px 60px;
-  }
-  .section + .section {
-    border-top: 1px solid var(--border);
-  }
-  .section-tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-  .section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 3.5vw, 42px);
-    font-weight: 700;
-    margin-bottom: 32px;
-    color: var(--ink);
-    line-height: 1.15;
-  }
-  .section h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin: 48px 0 16px;
-    color: var(--slate);
-  }
-  .section h4 {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin: 32px 0 12px;
-  }
-  p { margin-bottom: 16px; color: var(--slate); }
-  .lead {
-    font-size: 18px;
-    font-weight: 300;
-    color: var(--slate);
-    line-height: 1.8;
-    margin-bottom: 32px;
-    border-left: 3px solid var(--gold);
-    padding-left: 24px;
-  }
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3a52 100%);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-  /* EJECUTIVO */
-  .exec-box {
-    background: var(--ink);
-    color: var(--paper);
-    border-radius: 6px;
-    padding: 48px;
-    margin-bottom: 48px;
-  }
-  .exec-box h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    color: var(--gold);
-    margin-bottom: 20px;
-  }
-  .exec-box p { color: rgba(245,242,236,0.85); margin-bottom: 14px; }
-  .exec-box .highlight { color: var(--gold); font-weight: 600; }
-  .kpi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-    margin: 32px 0;
-  }
-  .kpi-card {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 24px 20px;
-    text-align: center;
-  }
-  .kpi-card .kpi-val {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--teal);
-    display: block;
-  }
-  .kpi-card .kpi-label {
-    font-size: 12px;
-    font-family: 'IBM Plex Mono', monospace;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 6px;
-    display: block;
-  }
-  .kpi-card .kpi-change {
-    font-size: 12px;
-    font-weight: 500;
-    margin-top: 4px;
-    display: block;
-  }
-  .kpi-card .kpi-change.up { color: var(--green-flag); }
-  .kpi-card .kpi-change.down { color: var(--red-flag); }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  /* TABLAS */
-  .table-wrap { overflow-x: auto; margin: 32px 0; }
-  .table-caption {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 10px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13.5px;
-    background: var(--white);
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  }
-  thead tr { background: var(--ink); color: var(--paper); }
-  thead th {
-    padding: 14px 16px;
-    text-align: left;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-  tbody tr:nth-child(even) { background: var(--cream); }
-  tbody tr:hover { background: #e8f4f5; }
-  tbody td {
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-    color: var(--slate);
-  }
-  .badge {
-    display: inline-block;
-    padding: 2px 9px;
-    border-radius: 3px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    font-family: 'IBM Plex Mono', monospace;
-  }
-  .badge-green { background: #d4edda; color: var(--green-flag); }
-  .badge-gold  { background: #fef3cd; color: var(--gold); }
-  .badge-red   { background: #fde8e8; color: var(--red-flag); }
-  .badge-teal  { background: #d0eaec; color: var(--teal); }
-  .badge-slate { background: #e2e8f0; color: var(--slate); }
-  .bold-cell   { font-weight: 600; color: var(--ink); }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--gold);
+            text-decoration: none;
+        }
 
-  /* PRODUCTOS CARDS */
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    margin: 40px 0;
-  }
-  .product-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: box-shadow 0.2s;
-  }
-  .product-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.09); }
-  .product-card-header {
-    padding: 20px 24px 16px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  .product-card-header h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 700;
-    margin: 0;
-    color: var(--ink);
-  }
-  .product-card-body { padding: 20px 24px; }
-  .product-card-body .flag {
-    font-size: 22px;
-    margin-bottom: 8px;
-    display: block;
-  }
-  .product-stat-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 7px 0;
-    border-bottom: 1px solid var(--cream);
-    font-size: 13px;
-  }
-  .product-stat-row:last-child { border-bottom: none; }
-  .product-stat-row .stat-label { color: var(--muted); }
-  .product-stat-row .stat-val { font-weight: 600; color: var(--ink); }
-  .score-bar-wrap { margin: 14px 0 4px; }
-  .score-bar-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    font-family: 'IBM Plex Mono', monospace;
-    color: var(--muted);
-    margin-bottom: 4px;
-  }
-  .score-bar {
-    height: 6px;
-    background: var(--cream);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  .score-bar-fill {
-    height: 100%;
-    border-radius: 3px;
-    background: var(--teal);
-  }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-  /* SWOT */
-  .swot-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    margin: 24px 0;
-  }
-  .swot-cell {
-    padding: 24px;
-    border: 1px solid var(--border);
-  }
-  .swot-cell h5 {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 14px;
-  }
-  .swot-s { background: #eaf4ec; }
-  .swot-s h5 { color: var(--green-flag); }
-  .swot-w { background: #fdf3e8; }
-  .swot-w h5 { color: var(--rust); }
-  .swot-o { background: #e6f2f4; }
-  .swot-o h5 { color: var(--teal); }
-  .swot-t { background: #fceaea; }
-  .swot-t h5 { color: var(--red-flag); }
-  .swot-cell ul {
-    list-style: none;
-    padding: 0;
-  }
-  .swot-cell ul li {
-    font-size: 13px;
-    color: var(--slate);
-    margin-bottom: 7px;
-    padding-left: 16px;
-    position: relative;
-    line-height: 1.5;
-  }
-  .swot-cell ul li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    font-size: 11px;
-    opacity: 0.5;
-  }
+        nav a:hover {
+            color: var(--gold);
+        }
 
-  /* CHARTS CONTAINER */
-  .chart-container {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 28px;
-    margin: 32px 0;
-  }
-  .chart-title {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 20px;
-  }
-  .chart-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-  @media (max-width: 760px) {
-    .chart-row { grid-template-columns: 1fr; }
-    .swot-grid { grid-template-columns: 1fr; }
-    .section { padding: 48px 24px; }
-    .cover { padding: 60px 32px; }
-    .toc-nav { padding: 16px 24px; }
-  }
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--accent-teal) 100%);
+            color: white;
+            padding: 150px 40px 80px;
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
 
-  /* TABS */
-  .tab-nav {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 28px;
-    border-bottom: 2px solid var(--border);
-    flex-wrap: wrap;
-  }
-  .tab-btn {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 10px 18px;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    color: var(--muted);
-    border-bottom: 2px solid transparent;
-    margin-bottom: -2px;
-    transition: all 0.2s;
-  }
-  .tab-btn:hover { color: var(--teal); }
-  .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); font-weight: 600; }
-  .tab-pane { display: none; }
-  .tab-pane.active { display: block; }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
 
-  /* RECOMENDACIONES */
-  .rec-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin: 32px 0;
-  }
-  .rec-card {
-    border-left: 4px solid var(--gold);
-    background: var(--white);
-    border-radius: 0 8px 8px 0;
-    padding: 24px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  }
-  .rec-card .rec-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 900;
-    color: var(--cream);
-    float: right;
-    line-height: 1;
-    margin-left: 12px;
-  }
-  .rec-card h4 {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 10px;
-    text-transform: none;
-    letter-spacing: 0;
-  }
-  .rec-card p { font-size: 13px; margin-bottom: 0; color: var(--muted); }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-  /* MATRIX */
-  .matrix-wrap {
-    overflow-x: auto;
-    margin: 32px 0;
-  }
-  .matrix {
-    min-width: 700px;
-    border-collapse: collapse;
-    font-size: 13px;
-    width: 100%;
-  }
-  .matrix thead th {
-    background: var(--teal);
-    color: var(--white);
-    padding: 12px 14px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  .matrix tbody td {
-    padding: 11px 14px;
-    border: 1px solid var(--border);
-    vertical-align: middle;
-  }
-  .matrix tbody tr:nth-child(even) td { background: var(--cream); }
-  .matrix tbody td:first-child { font-weight: 600; color: var(--ink); }
-  .stars { color: var(--gold); font-size: 14px; }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
 
-  /* FUENTES */
-  .sources-list {
-    list-style: none;
-    padding: 0;
-  }
-  .sources-list li {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
-    color: var(--slate);
-  }
-  .sources-list li:last-child { border-bottom: none; }
-  .sources-list a { color: var(--teal); text-decoration: none; }
-  .sources-list a:hover { text-decoration: underline; }
-  .source-id {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    margin-right: 10px;
-  }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
 
-  /* FOOTER */
-  footer {
-    background: var(--ink);
-    color: rgba(245,242,236,0.4);
-    text-align: center;
-    padding: 40px 60px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1px;
-  }
+        .cta-button {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-  /* ACCENTS */
-  .callout {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--teal);
-    border-radius: 0 6px 6px 0;
-    padding: 20px 24px;
-    margin: 24px 0;
-    font-size: 14px;
-  }
-  .callout strong { color: var(--teal); }
-  .flag-es { color: #c60b1e; }
-  .arrow-indicator { font-size: 18px; }
-</style>
+        .cta-button:hover {
+            background: var(--red);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* SECCIONES */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--navy);
+            margin-bottom: 40px;
+            border-bottom: 4px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* GRID DE CONTENIDO */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        .content-box {
+            background: white;
+            padding: 40px;
+            border-left: 6px solid var(--red);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 4px;
+        }
+
+        .content-box h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .content-box i {
+            color: var(--red);
+            font-size: 28px;
+        }
+
+        .content-box p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
+        .content-box ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .content-box li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .content-box li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* STATS */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 60px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--accent-teal) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* IMAGEN */
+        .image-section {
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: var(--red);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .content-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            nav a {
+                margin-left: 15px;
+                font-size: 14px;
+            }
+        }
+
+        /* ANIMACIONES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-box {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .stat-card {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
 </head>
 <body>
-
-<!-- PORTADA -->
-<div class="cover">
-  <div class="cover-tag">Trabajo Fin de Grado Superior · GACI & TIM · 2024–2025</div>
-  <h1>Estudio de Mercado<br><em>Comercio Internacional</em><br>España</h1>
-  <div class="cover-divider"></div>
-  <p class="cover-sub">Análisis exhaustivo de oportunidades de importación y exportación desde y hacia España, con identificación de productos nicho de alto potencial, análisis regulatorio, cadenas de suministro y recomendaciones estratégicas.</p>
-  <div class="cover-meta">
-    <div class="cover-meta-item"><label>Módulos</label><span>GACI · TIM</span></div>
-    <div class="cover-meta-item"><label>Ciclo Formativo</label><span>Grado Superior — Comercio Internacional</span></div>
-    <div class="cover-meta-item"><label>Año Académico</label><span>2024 – 2025</span></div>
-    <div class="cover-meta-item"><label>Referencia</label><span>TFG-CI-2025-001</span></div>
-  </div>
-</div>
-
-<!-- NAVEGACIÓN -->
-<nav class="toc-nav">
-  <a href="#resumen">Resumen Ejecutivo</a>
-  <a href="#productos">Productos Identificados</a>
-  <a href="#analisis">Análisis por Producto</a>
-  <a href="#regulatorio">Marco Regulatorio</a>
-  <a href="#logistica">Logística & Supply Chain</a>
-  <a href="#comparativa">Matriz Comparativa</a>
-  <a href="#recomendaciones">Recomendaciones</a>
-  <a href="#fuentes">Fuentes</a>
-</nav>
-
-<!-- 1. RESUMEN EJECUTIVO -->
-<section class="section" id="resumen">
-  <div class="section-tag">Sección 01</div>
-  <h2>Resumen Ejecutivo</h2>
-  <p class="lead">España ocupa el puesto 15.º exportador mundial con un volumen comercial superior a 825.000 millones de euros en 2024. Su posición geográfica —puerta entre Europa, África y América Latina— combinada con su integración en la Unión Europea, genera ventajas competitivas únicas para el comercio internacional.</p>
-
-  <div class="exec-box">
-    <h3>Hallazgos Clave</h3>
-    <p>El análisis identifica <span class="highlight">10 categorías de productos</span> con potencial significativo, clasificadas entre exportaciones tradicionales de alto valor añadido e importaciones estratégicas que responden a déficits productivos nacionales. Los sectores de <span class="highlight">agroalimentación ecológica, cosmética natural, moda sostenible y tecnología de energía renovable</span> lideran el ranking de oportunidades por rentabilidad y proyección de crecimiento.</p>
-    <p>En cuanto a destinos/orígenes prioritarios, el análisis recomienda <span class="highlight">Japón y Corea del Sur</span> para exportaciones de productos gourmet y vino; <span class="highlight">México y Colombia</span> para exportaciones de cosmética e indumentaria; y <span class="highlight">Vietnam, India y Marruecos</span> como orígenes preferentes para importaciones de textil técnico, componentes electrónicos y productos agrícolas complementarios.</p>
-    <p>Los <span class="highlight">principales riesgos</span> identificados son la volatilidad cambiaria en mercados emergentes, las barreras no arancelarias en Asia-Pacífico y la presión regulatoria ESG que exige certificaciones crecientes. Las <span class="highlight">oportunidades críticas</span> residen en los acuerdos EU-Mercosur y EU-India actualmente en negociación, y en la creciente demanda global de productos con denominación de origen española.</p>
-  </div>
-
-  <div class="kpi-grid">
-    <div class="kpi-card">
-      <span class="kpi-val">€379B</span>
-      <span class="kpi-label">Exportaciones totales España 2024</span>
-      <span class="kpi-change up">▲ +4,2% vs 2023</span>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-val">€446B</span>
-      <span class="kpi-label">Importaciones totales España 2024</span>
-      <span class="kpi-change down">▼ −1,1% vs 2023</span>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-val">15.º</span>
-      <span class="kpi-label">Posición exportador mundial</span>
-      <span class="kpi-change up">▲ +1 vs 2022</span>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-val">74%</span>
-      <span class="kpi-label">Exportaciones destino UE</span>
-      <span class="kpi-change">Estable</span>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-val">€67B</span>
-      <span class="kpi-label">Déficit comercial neto 2024</span>
-      <span class="kpi-change up">▲ Mejora 9% vs 2023</span>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-val">8,4%</span>
-      <span class="kpi-label">CAGR proyectado sector ecológico</span>
-      <span class="kpi-change up">▲ 2024–2029</span>
-    </div>
-  </div>
-
-  <div class="chart-row">
-    <div class="chart-container">
-      <div class="chart-title">Composición exportaciones España 2024 (principales categorías, % del total)</div>
-      <div style="position:relative; height:260px;">
-        <canvas id="chartExportPie" role="img" aria-label="Gráfico circular composición exportaciones España 2024">Automoción 16%, Alimentos y bebidas 20%, Química y farmacia 13%, Maquinaria 11%, Textil 7%, Otros 33%</canvas>
-      </div>
-    </div>
-    <div class="chart-container">
-      <div class="chart-title">Evolución balanza comercial España 2019–2024 (Miles de millones €)</div>
-      <div style="position:relative; height:260px;">
-        <canvas id="chartBalanza" role="img" aria-label="Evolución balanza comercial España 2019-2024">Exportaciones e importaciones en miles de millones de euros por año</canvas>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 2. PRODUCTOS IDENTIFICADOS -->
-<section class="section" id="productos">
-  <div class="section-tag">Sección 02</div>
-  <h2>Productos Identificados<br>con Mayor Potencial</h2>
-  <p class="lead">Tras el análisis de indicadores de demanda global, competitividad española y márgenes de rentabilidad, se han identificado y priorizado las siguientes 10 categorías producto-mercado para las operaciones de importación y exportación.</p>
-
-  <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab(this,'tab-export')">Exportaciones desde España</button>
-    <button class="tab-btn" onclick="switchTab(this,'tab-import')">Importaciones hacia España</button>
-  </div>
-
-  <div id="tab-export" class="tab-pane active">
-    <div class="products-grid">
-
-      <!-- PRODUCTO 1 -->
-      <div class="product-card">
-        <div class="product-card-header">
-          <div>
-            <span class="badge badge-green" style="margin-bottom:6px; display:inline-block;">EXPORTACIÓN</span>
-            <h3>Aceite de Oliva Virgen Extra Ecológico</h3>
-          </div>
-          <span style="font-size:32px;">🫒</span>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">🌾 IBERIA TRADE</a>
+            <nav>
+                <a href="#producto">Producto</a>
+                <a href="#mercado">Mercado</a>
+                <a href="#logistica">Logística</a>
+                <a href="#financiero">Financiero</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
         </div>
-        <div class="product-card-body">
-          <div class="product-stat-row"><span class="stat-label">País destino sugerido</span><span class="stat-val">Japón 🇯🇵 / EE.UU. 🇺🇸</span></div>
-          <div class="product-stat-row"><span class="stat-label">Tamaño de mercado global</span><span class="stat-val">€15.400M (2024)</span></div>
-          <div class="product-stat-row"><span class="stat-label">CAGR proyectado</span><span class="stat-val">+5,8% (2024–2029)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Margen de exportación</span><span class="stat-val">35–55%</span></div>
-          <div class="product-stat-row"><span class="stat-label">Arancel destino UE→Japón</span><span class="stat-val">0% (EPA)</span></div>
-          <div class="score-bar-wrap">
-            <div class="score-bar-label"><span>Potencial global</span><span>92/100</span></div>
-            <div class="score-bar"><div class="score-bar-fill" style="width:92%"></div></div>
-          </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Azafrán Gourmet D.O.P. La Mancha</h1>
+            <p>Exportación estratégica hacia el mercado premium de Japón</p>
+            <a href="#producto" class="cta-button">Descubre Nuestro Proyecto</a>
         </div>
-      </div>
+    </section>
 
-      <!-- PRODUCTO 2 -->
-      <div class="product-card">
-        <div class="product-card-header">
-          <div>
-            <span class="badge badge-green" style="margin-bottom:6px; display:inline-block;">EXPORTACIÓN</span>
-            <h3>Vino con Denominación de Origen</h3>
-          </div>
-          <span style="font-size:32px;">🍷</span>
+    <!-- PRODUCTO -->
+    <section id="producto">
+        <h2><i class="fas fa-leaf"></i> El Producto</h2>
+        <div class="content-grid">
+            <div class="content-box">
+                <h3><i class="fas fa-certificate"></i> Certificación Premium</h3>
+                <p>Nuestro azafrán cuenta con la Denominación de Origen Protegida (D.O.P.) La Mancha, garantizando su autenticidad y calidad.</p>
+                <ul>
+                    <li>ISO 3632 Categoría 1</li>
+                    <li>Código TARIC: 0910 20 10 00</li>
+                    <li>100% producción artesanal</li>
+                    <li>Recolección manual hebra por hebra</li>
+                </ul>
+            </div>
+            <div class="image-section">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663567616940/hbRLdPkpLBfyzJnhhGbymF/saffron_premium_01-AzBKUsySNamUUW6UtEEE4i.webp" alt="Azafrán Premium">
+            </div>
         </div>
-        <div class="product-card-body">
-          <div class="product-stat-row"><span class="stat-label">País destino sugerido</span><span class="stat-val">Corea del Sur 🇰🇷 / Japón 🇯🇵</span></div>
-          <div class="product-stat-row"><span class="stat-label">Tamaño de mercado global</span><span class="stat-val">€360.000M (2024)</span></div>
-          <div class="product-stat-row"><span class="stat-label">CAGR proyectado</span><span class="stat-val">+3,2% (2024–2029)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Margen de exportación</span><span class="stat-val">40–70%</span></div>
-          <div class="product-stat-row"><span class="stat-label">Arancel UE→Corea del Sur</span><span class="stat-val">0% (TLC UE-Corea)</span></div>
-          <div class="score-bar-wrap">
-            <div class="score-bar-label"><span>Potencial global</span><span>88/100</span></div>
-            <div class="score-bar"><div class="score-bar-fill" style="width:88%"></div></div>
-          </div>
+    </section>
+
+    <!-- MERCADO -->
+    <section id="mercado" style="background: var(--light-gray);">
+        <h2><i class="fas fa-map-marker-alt"></i> Mercado Japonés</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">€5.500</div>
+                <div class="stat-label">Valor Operación</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0%</div>
+                <div class="stat-label">Arancel (EPA)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">25,45%</div>
+                <div class="stat-label">Margen Bruto</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1 kg</div>
+                <div class="stat-label">Cantidad</div>
+            </div>
         </div>
-      </div>
-
-      <!-- PRODUCTO 3 -->
-      <div class="product-card">
-        <div class="product-card-header">
-          <div>
-            <span class="badge badge-green" style="margin-bottom:6px; display:inline-block;">EXPORTACIÓN</span>
-            <h3>Cosmética Natural & Orgánica</h3>
-          </div>
-          <span style="font-size:32px;">🌿</span>
+        <div class="content-grid">
+            <div class="content-box">
+                <h3><i class="fas fa-chart-line"></i> Oportunidad de Mercado</h3>
+                <p>Japón es el mercado premium más atractivo para productos gourmet españoles. Con un PIB per cápita de $39,300 USD y una creciente demanda de gastronomía internacional, el azafrán D.O.P. representa una oportunidad única.</p>
+                <ul>
+                    <li>Mayor consumidor de productos gourmet</li>
+                    <li>Arancel 0% (Acuerdo EPA UE-Japón)</li>
+                    <li>Tendencia creciente en gastronomía española</li>
+                </ul>
+            </div>
+            <div class="content-box">
+                <h3><i class="fas fa-shopping-cart"></i> Canales de Distribución</h3>
+                <p>Nuestra estrategia de distribución se enfoca en los segmentos más rentables del mercado japonés.</p>
+                <ul>
+                    <li>Tiendas delicatessen premium en Tokio</li>
+                    <li>Alta restauración y chefs reconocidos</li>
+                    <li>Plataformas e-commerce de lujo</li>
+                    <li>Importadores especializados</li>
+                </ul>
+            </div>
         </div>
-        <div class="product-card-body">
-          <div class="product-stat-row"><span class="stat-label">País destino sugerido</span><span class="stat-val">México 🇲🇽 / Colombia 🇨🇴</span></div>
-          <div class="product-stat-row"><span class="stat-label">Tamaño de mercado global</span><span class="stat-val">€16.800M (2024)</span></div>
-          <div class="product-stat-row"><span class="stat-label">CAGR proyectado</span><span class="stat-val">+9,3% (2024–2029)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Margen de exportación</span><span class="stat-val">45–65%</span></div>
-          <div class="product-stat-row"><span class="stat-label">Arancel UE→México</span><span class="stat-val">0% (TLCUEM)</span></div>
-          <div class="score-bar-wrap">
-            <div class="score-bar-label"><span>Potencial global</span><span>94/100</span></div>
-            <div class="score-bar"><div class="score-bar-fill" style="width:94%; background: var(--gold);"></div></div>
-          </div>
+    </section>
+
+    <!-- LOGÍSTICA -->
+    <section id="logistica">
+        <h2><i class="fas fa-ship"></i> Estrategia de Transporte Marítimo</h2>
+        <div class="content-grid">
+            <div class="image-section">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663567616940/hbRLdPkpLBfyzJnhhGbymF/spain_japan_route_03-8Uv3ydNnhrzeoabQS9Gk86.webp" alt="Ruta Marítima">
+            </div>
+            <div class="content-box">
+                <h3><i class="fas fa-anchor"></i> Ruta Marítima Optimizada</h3>
+                <p>Utilizamos transporte marítimo como método principal, ofreciendo la mejor relación costo-beneficio para productos de alto valor.</p>
+                <ul>
+                    <li><strong>Origen:</strong> Puerto de Valencia, España</li>
+                    <li><strong>Destino:</strong> Puerto de Yokohama, Japón</li>
+                    <li><strong>Duración:</strong> 30-35 días</li>
+                    <li><strong>Incoterm:</strong> CIF Yokohama 2020</li>
+                    <li><strong>Contenedor:</strong> Refrigerado (20 pies)</li>
+                </ul>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <!-- PRODUCTO 4 -->
-      <div class="product-card">
-        <div class="product-card-header">
-          <div>
-            <span class="badge badge-green" style="margin-bottom:6px; display:inline-block;">EXPORTACIÓN</span>
-            <h3>Calzado de Diseño & Premium</h3>
-          </div>
-          <span style="font-size:32px;">👞</span>
+    <!-- FINANCIERO -->
+    <section id="financiero" style="background: var(--light-gray);">
+        <h2><i class="fas fa-chart-pie"></i> Viabilidad Financiera</h2>
+        <div class="content-grid">
+            <div class="content-box">
+                <h3><i class="fas fa-calculator"></i> Desglose de Costes</h3>
+                <ul>
+                    <li>Adquisición azafrán: <strong>€3.500</strong></li>
+                    <li>Transporte marítimo: <strong>€350</strong></li>
+                    <li>Aduanas y documentación: <strong>€150</strong></li>
+                    <li>Seguro y otros: <strong>€100</strong></li>
+                    <li style="border-top: 2px solid var(--gold); padding-top: 10px; margin-top: 10px;"><strong>Total: €4.100</strong></li>
+                </ul>
+            </div>
+            <div class="content-box">
+                <h3><i class="fas fa-money-bill-wave"></i> Proyección de Ingresos</h3>
+                <ul>
+                    <li>Precio de venta: <strong>€5.500</strong></li>
+                    <li>Beneficio bruto: <strong>€1.400</strong></li>
+                    <li>Margen: <strong>25,45%</strong></li>
+                    <li>ROI: <strong>34% en 1 operación</strong></li>
+                    <li style="border-top: 2px solid var(--gold); padding-top: 10px; margin-top: 10px;"><strong>Escalabilidad: €150.000+ anual</strong></li>
+                </ul>
+            </div>
         </div>
-        <div class="product-card-body">
-          <div class="product-stat-row"><span class="stat-label">País destino sugerido</span><span class="stat-val">EE.UU. 🇺🇸 / Emiratos Árabes 🇦🇪</span></div>
-          <div class="product-stat-row"><span class="stat-label">Tamaño de mercado global</span><span class="stat-val">€215.000M (2024)</span></div>
-          <div class="product-stat-row"><span class="stat-label">CAGR proyectado</span><span class="stat-val">+4,7% (2024–2029)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Margen de exportación</span><span class="stat-val">30–50%</span></div>
-          <div class="product-stat-row"><span class="stat-label">Arancel UE→EE.UU.</span><span class="stat-val">8,5% (sin TLC activo)</span></div>
-          <div class="score-bar-wrap">
-            <div class="score-bar-label"><span>Potencial global</span><span>80/100</span></div>
-            <div class="score-bar"><div class="score-bar-fill" style="width:80%"></div></div>
-          </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+        <h2><i class="fas fa-envelope"></i> Contacto</h2>
+        <div class="content-grid">
+            <div class="content-box">
+                <h3>IBERIA TRADE GLOBAL S.L.</h3>
+                <p><strong>CIF:</strong> B-12345678</p>
+                <p><strong>Ubicación:</strong> Madrid, España</p>
+                <p><strong>Especialización:</strong> Exportación de productos gourmet españoles con certificación de origen</p>
+            </div>
+            <div class="content-box">
+                <h3>Equipo del Proyecto</h3>
+                <p><strong>Integrantes:</strong></p>
+                <ul>
+                    <li>Adam</li>
+                    <li>Carlos Andrés</li>
+                    <li>Paula</li>
+                    <li>Justin</li>
+                </ul>
+                <p style="margin-top: 20px; font-size: 12px; color: var(--accent-teal);">Trabajo Fin de Grado - Módulos GACI y TiM</p>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <!-- PRODUCTO 5 -->
-      <div class="product-card">
-        <div class="product-card-header">
-          <div>
-            <span class="badge badge-green" style="margin-bottom:6px; display:inline-block;">EXPORTACIÓN</span>
-            <h3>Azafrán & Especias Gourmet</h3>
-          </div>
-          <span style="font-size:32px;">🌸</span>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 IBERIA TRADE GLOBAL S.L. - Todos los derechos reservados</p>
+        <p>Exportación de Azafrán Gourmet D.O.P. La Mancha a Japón</p>
+        <div class="footer-links">
+            <a href="#producto">Producto</a>
+            <a href="#mercado">Mercado</a>
+            <a href="#logistica">Logística</a>
+            <a href="#financiero">Financiero</a>
+            <a href="#contacto">Contacto</a>
         </div>
-        <div class="product-card-body">
-          <div class="product-stat-row"><span class="stat-label">País destino sugerido</span><span class="stat-val">Arabia Saudí 🇸🇦 / Japón 🇯🇵</span></div>
-          <div class="product-stat-row"><span class="stat-label">Precio medio azafrán</span><span class="stat-val">€3.500–8.000/kg</span></div>
-          <div class="product-stat-row"><span class="stat-label">CAGR proyectado</span><span class="stat-val">+7,1% (2024–2029)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Margen de exportación</span><span class="stat-val">200–400% (retail)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Clasificación arancelaria</span><span class="stat-val">HS 0910.20</span></div>
-          <div class="score-bar-wrap">
-            <div class="score-bar-label"><span>Potencial global</span><span>85/100</span></div>
-            <div class="score-bar"><div class="score-bar-fill" style="width:85%"></div></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div id="tab-import" class="tab-pane">
-    <div class="products-grid">
-
-      <!-- IMPORTACIÓN 1 -->
-      <div class="product-card">
-        <div class="product-card-header">
-          <div>
-            <span class="badge badge-teal" style="margin-bottom:6px; display:inline-block;">IMPORTACIÓN</span>
-            <h3>Textil Técnico & Deportivo</h3>
-          </div>
-          <span style="font-size:32px;">🧵</span>
-        </div>
-        <div class="product-card-body">
-          <div class="product-stat-row"><span class="stat-label">País origen sugerido</span><span class="stat-val">Vietnam 🇻🇳 / Bangladesh 🇧🇩</span></div>
-          <div class="product-stat-row"><span class="stat-label">Ahorro vs producción local</span><span class="stat-val">45–65%</span></div>
-          <div class="product-stat-row"><span class="stat-label">CAGR mercado España</span><span class="stat-val">+6,2% (2024–2029)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Arancel importación UE</span><span class="stat-val">12% (GSP reducido)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Volumen estimado</span><span class="stat-val">€8.400M/año España</span></div>
-          <div class="score-bar-wrap">
-            <div class="score-bar-label"><span>Potencial global</span><span>87/100</span></div>
-            <div class="score-bar"><div class="score-bar-fill" style="width:87%; background: var(--teal);"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- IMPORTACIÓN 2 -->
-      <div class="product-card">
-        <div class="product-card-header">
-          <div>
-            <span class="badge badge-teal" style="margin-bottom:6px; display:inline-block;">IMPORTACIÓN</span>
-            <h3>Componentes Electrónicos IoT</h3>
-          </div>
-          <span style="font-size:32px;">⚙️</span>
-        </div>
-        <div class="product-card-body">
-          <div class="product-stat-row"><span class="stat-label">País origen sugerido</span><span class="stat-val">Taiwán 🇹🇼 / India 🇮🇳</span></div>
-          <div class="product-stat-row"><span class="stat-label">Demanda industria 4.0 ES</span><span class="stat-val">+18,3%/año</span></div>
-          <div class="product-stat-row"><span class="stat-label">CAGR mercado España</span><span class="stat-val">+14,7% (2024–2029)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Arancel importación UE</span><span class="stat-val">0% (ITA WTO)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Volumen estimado</span><span class="stat-val">€4.200M/año España</span></div>
-          <div class="score-bar-wrap">
-            <div class="score-bar-label"><span>Potencial global</span><span>91/100</span></div>
-            <div class="score-bar"><div class="score-bar-fill" style="width:91%; background: var(--teal);"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- IMPORTACIÓN 3 -->
-      <div class="product-card">
-        <div class="product-card-header">
-          <div>
-            <span class="badge badge-teal" style="margin-bottom:6px; display:inline-block;">IMPORTACIÓN</span>
-            <h3>Frutas Tropicales & Exóticas</h3>
-          </div>
-          <span style="font-size:32px;">🥭</span>
-        </div>
-        <div class="product-card-body">
-          <div class="product-stat-row"><span class="stat-label">País origen sugerido</span><span class="stat-val">Marruecos 🇲🇦 / Colombia 🇨🇴</span></div>
-          <div class="product-stat-row"><span class="stat-label">Demanda retail España</span><span class="stat-val">+11,4%/año</span></div>
-          <div class="product-stat-row"><span class="stat-label">CAGR mercado España</span><span class="stat-val">+8,9% (2024–2029)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Arancel importación UE</span><span class="stat-val">0–8% (Marruecos: AA)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Margen distribución</span><span class="stat-val">30–60%</span></div>
-          <div class="score-bar-wrap">
-            <div class="score-bar-label"><span>Potencial global</span><span>83/100</span></div>
-            <div class="score-bar"><div class="score-bar-fill" style="width:83%; background: var(--teal);"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- IMPORTACIÓN 4 -->
-      <div class="product-card">
-        <div class="product-card-header">
-          <div>
-            <span class="badge badge-teal" style="margin-bottom:6px; display:inline-block;">IMPORTACIÓN</span>
-            <h3>Módulos Solares & Almacenamiento</h3>
-          </div>
-          <span style="font-size:32px;">☀️</span>
-        </div>
-        <div class="product-card-body">
-          <div class="product-stat-row"><span class="stat-label">País origen sugerido</span><span class="stat-val">China 🇨🇳 / Corea del Sur 🇰🇷</span></div>
-          <div class="product-stat-row"><span class="stat-label">Inversión PERTE España</span><span class="stat-val">+€16.000M hasta 2030</span></div>
-          <div class="product-stat-row"><span class="stat-label">CAGR mercado España</span><span class="stat-val">+19,4% (2024–2029)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Arancel importación UE</span><span class="stat-val">3,7% (HS 8541.40)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Volumen estimado</span><span class="stat-val">€6.800M/año España</span></div>
-          <div class="score-bar-wrap">
-            <div class="score-bar-label"><span>Potencial global</span><span>96/100</span></div>
-            <div class="score-bar"><div class="score-bar-fill" style="width:96%; background: var(--gold);"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- IMPORTACIÓN 5 -->
-      <div class="product-card">
-        <div class="product-card-header">
-          <div>
-            <span class="badge badge-teal" style="margin-bottom:6px; display:inline-block;">IMPORTACIÓN</span>
-            <h3>Materia Prima Farmacéutica (API)</h3>
-          </div>
-          <span style="font-size:32px;">💊</span>
-        </div>
-        <div class="product-card-body">
-          <div class="product-stat-row"><span class="stat-label">País origen sugerido</span><span class="stat-val">India 🇮🇳 / China 🇨🇳</span></div>
-          <div class="product-stat-row"><span class="stat-label">Cuota India en API global</span><span class="stat-val">22% del total mundial</span></div>
-          <div class="product-stat-row"><span class="stat-label">CAGR mercado España</span><span class="stat-val">+7,6% (2024–2029)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Arancel importación UE</span><span class="stat-val">0% (HS 2941)</span></div>
-          <div class="product-stat-row"><span class="stat-label">Volumen estimado ES</span><span class="stat-val">€3.100M/año</span></div>
-          <div class="score-bar-wrap">
-            <div class="score-bar-label"><span>Potencial global</span><span>89/100</span></div>
-            <div class="score-bar"><div class="score-bar-fill" style="width:89%; background: var(--teal);"></div></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- 3. ANÁLISIS EN PROFUNDIDAD -->
-<section class="section" id="analisis">
-  <div class="section-tag">Sección 03</div>
-  <h2>Análisis de Mercado<br>en Profundidad</h2>
-  <p class="lead">Para los dos productos estrella identificados — cosmética natural (exportación) y módulos solares (importación) — se detalla a continuación un análisis completo de mercado, incluyendo DAFO y datos cuantitativos de referencia.</p>
-
-  <!-- PRODUCTO ESTRELLA EXPORTACIÓN: COSMÉTICA -->
-  <h3>🌿 Producto A: Cosmética Natural y Orgánica — Exportación a Latinoamérica</h3>
-
-  <div class="callout">
-    <strong>Justificación estratégica:</strong> España es el 4.º productor europeo de cosmética y posee más de 1.200 empresas del sector. La certificación COSMOS, la reputación de ingredientes mediterráneos (aceite de argán, aloe vera canario, lavanda) y el idioma compartido con 650M de hispanohablantes constituyen ventajas competitivas difícilmente replicables.
-  </div>
-
-  <div class="table-wrap">
-    <div class="table-caption">Tabla 3.1 — Tamaño y crecimiento del mercado de cosmética ecológica por región (2023–2029)</div>
-    <table>
-      <thead>
-        <tr>
-          <th>Mercado/Región</th>
-          <th>Tamaño 2023 (€M)</th>
-          <th>Tamaño 2024 (€M)</th>
-          <th>Proyección 2029 (€M)</th>
-          <th>CAGR 2024–2029</th>
-          <th>Atractivo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="bold-cell">México</td><td>€1.820M</td><td>€2.090M</td><td>€3.480M</td><td>+10,7%</td><td><span class="badge badge-green">MUY ALTO</span></td></tr>
-        <tr><td class="bold-cell">Colombia</td><td>€740M</td><td>€870M</td><td>€1.650M</td><td>+13,6%</td><td><span class="badge badge-green">MUY ALTO</span></td></tr>
-        <tr><td class="bold-cell">Brasil</td><td>€5.400M</td><td>€5.900M</td><td>€9.200M</td><td>+9,3%</td><td><span class="badge badge-gold">ALTO</span></td></tr>
-        <tr><td class="bold-cell">EE.UU. (Hispano)</td><td>€4.100M</td><td>€4.550M</td><td>€7.100M</td><td>+9,3%</td><td><span class="badge badge-gold">ALTO</span></td></tr>
-        <tr><td class="bold-cell">Chile</td><td>€320M</td><td>€385M</td><td>€730M</td><td>+13,7%</td><td><span class="badge badge-green">MUY ALTO</span></td></tr>
-        <tr><td class="bold-cell">Global Total</td><td>€16.800M</td><td>€18.900M</td><td>€29.600M</td><td>+9,3%</td><td>—</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h4>Análisis DAFO — Cosmética Natural Exportación España → LATAM</h4>
-  <div class="swot-grid">
-    <div class="swot-cell swot-s">
-      <h5>Fortalezas</h5>
-      <ul>
-        <li>Marca-país España reconocida en LATAM como sinónimo de calidad</li>
-        <li>Certificaciones europeas (COSMOS, Ecocert) de alta credibilidad</li>
-        <li>Base industrial consolidada: Puig, Natura Bissé, Mádara</li>
-        <li>Ventaja lingüística y cultural con mercados objetivo</li>
-        <li>Ingredientes mediterráneos exclusivos (squalane, aceite oliva, lavanda)</li>
-        <li>TLC UE-México y UE-Chile con aranceles 0%</li>
-      </ul>
-    </div>
-    <div class="swot-cell swot-w">
-      <h5>Debilidades</h5>
-      <ul>
-        <li>Costes de producción más altos que competidores asiáticos</li>
-        <li>Capacidad de producción limitada en PYMEs</li>
-        <li>Dependencia de certificaciones con costes elevados (€8.000–€25.000)</li>
-        <li>Cadenas de distribución largas y fragmentadas en destino</li>
-        <li>Branding local insuficiente en mercados latinoamericanos</li>
-      </ul>
-    </div>
-    <div class="swot-cell swot-o">
-      <h5>Oportunidades</h5>
-      <ul>
-        <li>Crecimiento clase media LATAM con mayor gasto en premium</li>
-        <li>E-commerce transfronterizo en auge (+18% anual LATAM)</li>
-        <li>Regulaciones sostenibilidad que favorecen producto europeo</li>
-        <li>Envejecimiento de la población (demanda anti-aging)</li>
-        <li>Negociación UE-Mercosur que ampliaría acceso a Brasil/Argentina</li>
-        <li>Influencer marketing hispano con bajo coste de entrada</li>
-      </ul>
-    </div>
-    <div class="swot-cell swot-t">
-      <h5>Amenazas</h5>
-      <ul>
-        <li>Competencia de marcas locales emergentes con costes menores</li>
-        <li>Devaluaciones cambiarias en peso mexicano y colombiano</li>
-        <li>Barreras no arancelarias: etiquetado en idioma local, INVIMA Colombia</li>
-        <li>Falsificaciones y productos imitación en mercados informales</li>
-        <li>K-beauty y J-beauty ganan cuota de mercado en LATAM</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- PRODUCTO ESTRELLA IMPORTACIÓN: SOLAR -->
-  <h3>☀️ Producto B: Módulos Fotovoltaicos — Importación desde Asia</h3>
-
-  <div class="callout">
-    <strong>Justificación estratégica:</strong> España tiene el mayor potencial solar de la UE con 2.700–3.000 horas de sol al año. El Plan Nacional Integrado de Energía y Clima (PNIEC) fija el objetivo de 76GW de solar instalada en 2030 (actualmente ~28GW), lo que representa una demanda de módulos de más de €15.000M en instalaciones pendientes. España no produce módulos a escala, por lo que la importación es estructuralmente imprescindible.
-  </div>
-
-  <div class="table-wrap">
-    <div class="table-caption">Tabla 3.2 — Principales proveedores globales de módulos solares (datos 2024)</div>
-    <table>
-      <thead>
-        <tr>
-          <th>Fabricante / País</th>
-          <th>Capacidad GW/año</th>
-          <th>Precio €/W (2024)</th>
-          <th>Eficiencia Módulo</th>
-          <th>Certificaciones</th>
-          <th>Recom. compra</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="bold-cell">LONGi Solar 🇨🇳</td><td>70 GW</td><td>€0,14–0,16</td><td>23,6% (HIMO6)</td><td>IEC, MCS, TÜV</td><td><span class="badge badge-green">PRIMARIO</span></td></tr>
-        <tr><td class="bold-cell">JA Solar 🇨🇳</td><td>50 GW</td><td>€0,13–0,15</td><td>22,4%</td><td>IEC, UL, MCS</td><td><span class="badge badge-green">PRIMARIO</span></td></tr>
-        <tr><td class="bold-cell">Hanwha Q-Cells 🇰🇷</td><td>12 GW</td><td>€0,19–0,22</td><td>22,1%</td><td>IEC, BBA, TÜV</td><td><span class="badge badge-gold">SECUNDARIO</span></td></tr>
-        <tr><td class="bold-cell">REC Group 🇸🇬/🇳🇴</td><td>5 GW</td><td>€0,22–0,26</td><td>21,8%</td><td>IEC, MCS, TÜV</td><td><span class="badge badge-gold">NICHO PREMIUM</span></td></tr>
-        <tr><td class="bold-cell">Trina Solar 🇨🇳</td><td>45 GW</td><td>€0,13–0,15</td><td>22,8%</td><td>IEC, UL, CEC</td><td><span class="badge badge-green">PRIMARIO</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h4>Análisis DAFO — Módulos Solares Importación Asia → España</h4>
-  <div class="swot-grid">
-    <div class="swot-cell swot-s">
-      <h5>Fortalezas</h5>
-      <ul>
-        <li>Precio histórico mínimo de módulos en 2024 (−62% desde 2020)</li>
-        <li>España: irradiación solar más alta de la UE continental</li>
-        <li>Infraestructura portuaria de primer nivel (Valencia, Barcelona, Algeciras)</li>
-        <li>Marco regulatorio favorable: RD 244/2019 (autoconsumo simplificado)</li>
-        <li>Arancel UE bajo: 3,7% con acceso a mecanismos de compensación</li>
-      </ul>
-    </div>
-    <div class="swot-cell swot-w">
-      <h5>Debilidades</h5>
-      <ul>
-        <li>Alta concentración de proveedores en China (riesgo geopolítico)</li>
-        <li>Tiempos de tránsito largos: 28–35 días desde Shanghai</li>
-        <li>Necesidad de almacenamiento especializado (embalaje antihumedad)</li>
-        <li>Complejidades en homologación de nuevos fabricantes</li>
-        <li>Burocracia en licencias de instalación (varía por CCAA)</li>
-      </ul>
-    </div>
-    <div class="swot-cell swot-o">
-      <h5>Oportunidades</h5>
-      <ul>
-        <li>Fondos Next Generation EU: €6.820M asignados a energía en España</li>
-        <li>Comunidades energéticas locales: demanda de pequeño formato creciente</li>
-        <li>Transición empresarial: obligación reporte ESG desde 2025</li>
-        <li>Mercado residencial: 18M de hogares sin instalación solar</li>
-        <li>Agrivoltaica: uso dual de suelo agrícola con paneles solares</li>
-      </ul>
-    </div>
-    <div class="swot-cell swot-t">
-      <h5>Amenazas</h5>
-      <ul>
-        <li>Posibles aranceles compensatorios UE contra dumping chino</li>
-        <li>Volatilidad en fletes marítimos (ruta Asia-Europa)</li>
-        <li>Riesgo de fallos técnicos y garantías difíciles de ejecutar</li>
-        <li>Competencia de fabricantes en India y Vietnam emergentes</li>
-        <li>Cambios regulatorios en incentivos fiscales (IBI, IBI, deducciones)</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- GRÁFICOS DE ANÁLISIS -->
-  <div class="chart-row">
-    <div class="chart-container">
-      <div class="chart-title">Crecimiento proyectado por sector 2024–2029 (CAGR %)</div>
-      <div style="position:relative; height:300px;">
-        <canvas id="chartCagr" role="img" aria-label="CAGR por sector 2024-2029">Datos de crecimiento anual por sector</canvas>
-      </div>
-    </div>
-    <div class="chart-container">
-      <div class="chart-title">Potencial de rentabilidad por producto (margen estimado %)</div>
-      <div style="position:relative; height:300px;">
-        <canvas id="chartMargen" role="img" aria-label="Margen de rentabilidad por producto">Márgenes de rentabilidad por categoría de producto</canvas>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. MARCO REGULATORIO -->
-<section class="section" id="regulatorio">
-  <div class="section-tag">Sección 04</div>
-  <h2>Marco Regulatorio<br>y Aranceles Aduaneros</h2>
-  <p class="lead">España, como miembro de la Unión Europea, aplica el Arancel Aduanero Común (AAC) y se beneficia de la red de Acuerdos Comerciales de la UE —la más extensa del mundo— que cubre más del 40% del comercio mundial con condiciones preferenciales.</p>
-
-  <div class="table-wrap">
-    <div class="table-caption">Tabla 4.1 — Acuerdos comerciales de la UE aplicables y aranceles por par producto-país (2024)</div>
-    <table>
-      <thead>
-        <tr>
-          <th>Producto</th>
-          <th>Partida HS</th>
-          <th>País / Bloc</th>
-          <th>Tipo Base AAC</th>
-          <th>Tipo Preferencial</th>
-          <th>Acuerdo Aplicable</th>
-          <th>Estado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="bold-cell">Aceite oliva virgen extra</td><td>1509.10</td><td>Japón 🇯🇵</td><td>6,4%</td><td>0%</td><td>EPA UE-Japón</td><td><span class="badge badge-green">VIGENTE</span></td>
-        </tr>
-        <tr>
-          <td class="bold-cell">Vino espumoso</td><td>2204.10</td><td>Corea del Sur 🇰🇷</td><td>15%</td><td>0%</td><td>TLC UE-Corea</td><td><span class="badge badge-green">VIGENTE</span></td>
-        </tr>
-        <tr>
-          <td class="bold-cell">Cosmética ecológica</td><td>3304.99</td><td>México 🇲🇽</td><td>6,5%</td><td>0%</td><td>TLCUEM revisado</td><td><span class="badge badge-green">VIGENTE</span></td>
-        </tr>
-        <tr>
-          <td class="bold-cell">Calzado cuero</td><td>6403.99</td><td>EE.UU. 🇺🇸</td><td>3,7–8,5%</td><td>Sin TLC</td><td>OMC (NMF)</td><td><span class="badge badge-red">SIN ACUERDO</span></td>
-        </tr>
-        <tr>
-          <td class="bold-cell">Azafrán</td><td>0910.20</td><td>Arabia Saudí 🇸🇦</td><td>4%</td><td>0%</td><td>Diálogo CCG-UE</td><td><span class="badge badge-gold">EN NEGOC.</span></td>
-        </tr>
-        <tr>
-          <td class="bold-cell">Módulos fotovoltaicos</td><td>8541.40</td><td>China 🇨🇳</td><td>3,7%</td><td>3,7%</td><td>Sin preferencial</td><td><span class="badge badge-red">RIESGO AD.</span></td>
-        </tr>
-        <tr>
-          <td class="bold-cell">Textil técnico</td><td>6006.22</td><td>Vietnam 🇻🇳</td><td>12%</td><td>0%</td><td>TLC UE-Vietnam</td><td><span class="badge badge-green">VIGENTE</span></td>
-        </tr>
-        <tr>
-          <td class="bold-cell">Componentes electrón.</td><td>8542.31</td><td>Taiwán 🇹🇼</td><td>0%</td><td>0%</td><td>ITA (OMC)</td><td><span class="badge badge-green">VIGENTE</span></td>
-        </tr>
-        <tr>
-          <td class="bold-cell">Frutas tropicales</td><td>0804.50</td><td>Marruecos 🇲🇦</td><td>4,5%</td><td>0%</td><td>Acuerdo Asoc. UE-MA</td><td><span class="badge badge-green">VIGENTE</span></td>
-        </tr>
-        <tr>
-          <td class="bold-cell">API farmacéuticos</td><td>2941.90</td><td>India 🇮🇳</td><td>0%</td><td>0%</td><td>ITA / TLC en negoc.</td><td><span class="badge badge-gold">EN NEGOC.</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h4>Requisitos de Certificación por Categoría de Producto</h4>
-  <div class="table-wrap">
-    <div class="table-caption">Tabla 4.2 — Certificaciones obligatorias y voluntarias para exportación/importación</div>
-    <table>
-      <thead>
-        <tr><th>Producto</th><th>Cert. Obligatoria UE</th><th>Cert. Voluntaria recomendada</th><th>Coste estimado (€)</th><th>Tiempo obtención</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="bold-cell">Cosmética natural</td><td>Notificación CPNP, REACH</td><td>COSMOS, Ecocert, NaTrue</td><td>€8.000–€25.000</td><td>3–6 meses</td></tr>
-        <tr><td class="bold-cell">Módulos solares</td><td>Marcado CE, IEC 61215</td><td>TÜV, MCS, Kiwa</td><td>€15.000–€40.000</td><td>4–8 meses</td></tr>
-        <tr><td class="bold-cell">Aceite oliva</td><td>Regl. UE 1308/2013, DOP/IGP</td><td>BRC, ISO 22000, FSSC</td><td>€5.000–€15.000</td><td>2–4 meses</td></tr>
-        <tr><td class="bold-cell">Textil técnico</td><td>REACH, Regl. 1007/2011</td><td>OEKO-TEX 100, GOTS, Bluesign</td><td>€3.000–€8.000</td><td>2–3 meses</td></tr>
-        <tr><td class="bold-cell">API farmacéuticos</td><td>GMP UE (Dir. 2001/83/CE)</td><td>ICH Q7, ISO 9001, FDA DMF</td><td>€50.000–€200.000</td><td>6–18 meses</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- 5. LOGÍSTICA -->
-<section class="section" id="logistica">
-  <div class="section-tag">Sección 05</div>
-  <h2>Cadena de Suministro<br>y Logística Internacional</h2>
-  <p class="lead">España cuenta con una infraestructura logística de primer nivel europeo: el puerto de Algeciras es el mayor hub de transbordo del Mediterráneo; el aeropuerto de Madrid-Barajas gestiona más de 50.000 toneladas de carga al año; y la red de ZAL (Zonas de Actividades Logísticas) cubre los principales corredores de distribución.</p>
-
-  <div class="table-wrap">
-    <div class="table-caption">Tabla 5.1 — Comparativa de modos de transporte por par origen-destino y tipo de producto</div>
-    <table>
-      <thead>
-        <tr>
-          <th>Ruta</th>
-          <th>Modo preferente</th>
-          <th>Tiempo tránsito</th>
-          <th>Coste aprox. (40' FCL)</th>
-          <th>Idóneo para</th>
-          <th>Riesgo logístico</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="bold-cell">España → Japón</td><td>Marítimo FCL</td><td>30–35 días</td><td>€2.800–€3.400</td><td>Aceite oliva, vino, azafrán</td><td><span class="badge badge-gold">MEDIO</span></td></tr>
-        <tr><td class="bold-cell">España → México</td><td>Marítimo FCL</td><td>18–22 días</td><td>€1.600–€2.100</td><td>Cosmética, calzado</td><td><span class="badge badge-green">BAJO</span></td></tr>
-        <tr><td class="bold-cell">España → EAU</td><td>Aéreo / Marítimo</td><td>2–3 días / 22 días</td><td>€4.500–€8.000 / €2.200</td><td>Azafrán premium, calzado</td><td><span class="badge badge-gold">MEDIO</span></td></tr>
-        <tr><td class="bold-cell">China → España</td><td>Marítimo FCL</td><td>28–35 días</td><td>€1.200–€2.800 (post-2023)</td><td>Módulos solares, electrónica</td><td><span class="badge badge-red">ALTO (fletes)</span></td></tr>
-        <tr><td class="bold-cell">Vietnam → España</td><td>Marítimo FCL</td><td>26–30 días</td><td>€1.400–€2.200</td><td>Textil técnico</td><td><span class="badge badge-gold">MEDIO</span></td></tr>
-        <tr><td class="bold-cell">Marruecos → España</td><td>Terrestre / RoRo</td><td>1–3 días</td><td>€600–€1.100</td><td>Frutas tropicales, hortalizas</td><td><span class="badge badge-green">BAJO</span></td></tr>
-        <tr><td class="bold-cell">India → España</td><td>Marítimo FCL</td><td>22–28 días</td><td>€1.100–€1.800</td><td>API farmacéuticos</td><td><span class="badge badge-gold">MEDIO</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h4>Puertos e Infraestructura Clave en España</h4>
-  <div class="kpi-grid">
-    <div class="kpi-card">
-      <span class="kpi-val" style="font-size:24px;">🚢 Algeciras</span>
-      <span class="kpi-label">Nº1 Hub Mediterráneo</span>
-      <span class="kpi-change">115M Ton/año · 5.6M TEUs</span>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-val" style="font-size:24px;">📦 Valencia</span>
-      <span class="kpi-label">1º Puerto España en contenedores</span>
-      <span class="kpi-change">5.9M TEUs (2024)</span>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-val" style="font-size:24px;">✈️ Madrid-Barajas</span>
-      <span class="kpi-label">Principal hub de carga aérea</span>
-      <span class="kpi-change">50.000 ton/año</span>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-val" style="font-size:24px;">🛤️ Barcelona</span>
-      <span class="kpi-label">Puerto + ZAL industrial</span>
-      <span class="kpi-change">3.8M TEUs · ZAL 1M m²</span>
-    </div>
-  </div>
-
-  <div class="chart-container">
-    <div class="chart-title">Tiempos de tránsito y costes logísticos comparados por ruta (marítimo FCL 40')</div>
-    <div style="position:relative; height:300px;">
-      <canvas id="chartLogistica" role="img" aria-label="Comparativa logística por ruta de transporte">Datos de tiempo y coste por ruta</canvas>
-    </div>
-  </div>
-</section>
-
-<!-- 6. COMPARATIVA -->
-<section class="section" id="comparativa">
-  <div class="section-tag">Sección 06</div>
-  <h2>Matriz Comparativa<br>de Oportunidades</h2>
-  <p class="lead">La siguiente matriz evalúa de forma integral los 10 productos identificados en 7 dimensiones estratégicas, permitiendo al decisor identificar con precisión el perfil de riesgo-retorno de cada oportunidad comercial.</p>
-
-  <div class="matrix-wrap">
-    <div class="table-caption">Tabla 6.1 — Matriz comparativa integral (1–5 estrellas por dimensión)</div>
-    <table class="matrix">
-      <thead>
-        <tr>
-          <th>Producto</th>
-          <th>Tipo</th>
-          <th>Rentabilidad</th>
-          <th>Crecimiento</th>
-          <th>Barrera entrada</th>
-          <th>Riesgo político</th>
-          <th>Facilidad logística</th>
-          <th>Marco legal</th>
-          <th>Sostenibilidad LP</th>
-          <th>Score global</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>🌿 Cosmética Natural</td><td><span class="badge badge-green">EXP</span></td>
-          <td><span class="stars">★★★★★</span></td><td><span class="stars">★★★★★</span></td>
-          <td><span class="stars">★★★☆☆</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★☆</span></td><td><span class="stars">★★★★★</span></td>
-          <td><span class="stars">★★★★★</span></td>
-          <td><strong>94</strong></td>
-        </tr>
-        <tr>
-          <td>☀️ Módulos Solares</td><td><span class="badge badge-teal">IMP</span></td>
-          <td><span class="stars">★★★★☆</span></td><td><span class="stars">★★★★★</span></td>
-          <td><span class="stars">★★★☆☆</span></td><td><span class="stars">★★★☆☆</span></td>
-          <td><span class="stars">★★★☆☆</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★★</span></td>
-          <td><strong>91</strong></td>
-        </tr>
-        <tr>
-          <td>🫒 Aceite Oliva Ecológico</td><td><span class="badge badge-green">EXP</span></td>
-          <td><span class="stars">★★★★★</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★☆</span></td><td><span class="stars">★★★★★</span></td>
-          <td><span class="stars">★★★★★</span></td><td><span class="stars">★★★★★</span></td>
-          <td><span class="stars">★★★★★</span></td>
-          <td><strong>92</strong></td>
-        </tr>
-        <tr>
-          <td>⚙️ Componentes IoT</td><td><span class="badge badge-teal">IMP</span></td>
-          <td><span class="stars">★★★☆☆</span></td><td><span class="stars">★★★★★</span></td>
-          <td><span class="stars">★★★★☆</span></td><td><span class="stars">★★★☆☆</span></td>
-          <td><span class="stars">★★★★☆</span></td><td><span class="stars">★★★★★</span></td>
-          <td><span class="stars">★★★★☆</span></td>
-          <td><strong>89</strong></td>
-        </tr>
-        <tr>
-          <td>🍷 Vino DO España</td><td><span class="badge badge-green">EXP</span></td>
-          <td><span class="stars">★★★★★</span></td><td><span class="stars">★★★☆☆</span></td>
-          <td><span class="stars">★★★★★</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★★</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★☆</span></td>
-          <td><strong>88</strong></td>
-        </tr>
-        <tr>
-          <td>💊 API Farmacéuticos</td><td><span class="badge badge-teal">IMP</span></td>
-          <td><span class="stars">★★★★☆</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★☆☆☆</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★☆</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★★</span></td>
-          <td><strong>87</strong></td>
-        </tr>
-        <tr>
-          <td>🌸 Azafrán Gourmet</td><td><span class="badge badge-green">EXP</span></td>
-          <td><span class="stars">★★★★★</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★★</span></td><td><span class="stars">★★★☆☆</span></td>
-          <td><span class="stars">★★★★☆</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★☆</span></td>
-          <td><strong>85</strong></td>
-        </tr>
-        <tr>
-          <td>🧵 Textil Técnico</td><td><span class="badge badge-teal">IMP</span></td>
-          <td><span class="stars">★★★☆☆</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★☆☆</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★★</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★☆</span></td>
-          <td><strong>83</strong></td>
-        </tr>
-        <tr>
-          <td>🥭 Frutas Tropicales</td><td><span class="badge badge-teal">IMP</span></td>
-          <td><span class="stars">★★★☆☆</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★☆</span></td><td><span class="stars">★★★★★</span></td>
-          <td><span class="stars">★★★★★</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★☆☆</span></td>
-          <td><strong>81</strong></td>
-        </tr>
-        <tr>
-          <td>👞 Calzado Premium</td><td><span class="badge badge-green">EXP</span></td>
-          <td><span class="stars">★★★★☆</span></td><td><span class="stars">★★★☆☆</span></td>
-          <td><span class="stars">★★★★☆</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★☆☆</span></td><td><span class="stars">★★★★☆</span></td>
-          <td><span class="stars">★★★★☆</span></td>
-          <td><strong>80</strong></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="chart-container">
-    <div class="chart-title">Score global comparativo de los 10 productos (sobre 100)</div>
-    <div style="position:relative; height:340px;">
-      <canvas id="chartComparativa" role="img" aria-label="Comparativa score global por producto">Scores de potencial por producto de exportación e importación</canvas>
-    </div>
-  </div>
-</section>
-
-<!-- 7. RECOMENDACIONES -->
-<section class="section" id="recomendaciones">
-  <div class="section-tag">Sección 07</div>
-  <h2>Recomendaciones<br>Estratégicas</h2>
-  <p class="lead">Basado en el análisis exhaustivo anterior, se proponen las siguientes recomendaciones concretas y accionables para maximizar el éxito en las operaciones de comercio internacional desde y hacia España.</p>
-
-  <h3>Estrategias de Entrada al Mercado</h3>
-  <div class="rec-grid">
-    <div class="rec-card">
-      <span class="rec-num">01</span>
-      <h4>Exportación Directa con Distribuidor Local</h4>
-      <p>Para cosmética y vino en LATAM/Asia: identificar distribuidor con red establecida. Ventaja: reducción de riesgo cambiario y operativo. Recomendable para primeras operaciones con volumen menor a €500K.</p>
-    </div>
-    <div class="rec-card">
-      <span class="rec-num">02</span>
-      <h4>E-commerce Transfronterizo B2C</h4>
-      <p>Para azafrán y cosmética hacia Japón y EE.UU.: plataformas Amazon Global, Tmall Global, Rakuten. Bajo coste de entrada (€5.000–€20.000) con acceso inmediato a millones de consumidores.</p>
-    </div>
-    <div class="rec-card">
-      <span class="rec-num">03</span>
-      <h4>Joint Venture para Módulos Solares</h4>
-      <p>Crear sociedad mixta con instaladora española y proveedor asiático: permite compartir riesgo, optimizar cadena de suministro y acceder a financiación Next Generation EU simultáneamente.</p>
-    </div>
-    <div class="rec-card">
-      <span class="rec-num">04</span>
-      <h4>Trading Company para API Farmacéuticos</h4>
-      <p>Crear o asociarse con una trading especializada en productos regulados. La complejidad regulatoria (GMP, FDA) hace inviable la entrada directa para PYMEs sin estructura especializada previa.</p>
-    </div>
-    <div class="rec-card">
-      <span class="rec-num">05</span>
-      <h4>Certificación COSMOS como Barrera Estratégica</h4>
-      <p>Invertir €15.000–€25.000 en obtener COSMOS antes de exportar cosmética. Una vez certificado, el margen premium (+25–40%) justifica la inversión en 6–12 meses. Dificulta la imitación por competidores locales.</p>
-    </div>
-    <div class="rec-card">
-      <span class="rec-num">06</span>
-      <h4>Aprovechar la Red ICEX y Cámaras de Comercio</h4>
-      <p>ICEX ofrece subvenciones de hasta €25.000 para internacionalización de PYMEs, misiones comerciales, estudios de mercado y oficinas comerciales en 100 países. Coste-efectivo para validar mercado.</p>
-    </div>
-  </div>
-
-  <h3>Plan de Mitigación de Riesgos</h3>
-  <div class="table-wrap">
-    <div class="table-caption">Tabla 7.1 — Identificación y mitigación de riesgos prioritarios</div>
-    <table>
-      <thead>
-        <tr><th>Riesgo</th><th>Tipo</th><th>Probabilidad</th><th>Impacto</th><th>Medida de Mitigación</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="bold-cell">Depreciación cambiaria (MXN, COP)</td>
-          <td>Financiero</td>
-          <td><span class="badge badge-gold">MEDIA</span></td>
-          <td><span class="badge badge-red">ALTO</span></td>
-          <td>Coberturas forward FX, facturación en USD o EUR, Seguro CESCE</td>
-        </tr>
-        <tr>
-          <td class="bold-cell">Aranceles antidumping UE a China (solares)</td>
-          <td>Regulatorio</td>
-          <td><span class="badge badge-gold">MEDIA</span></td>
-          <td><span class="badge badge-red">ALTO</span></td>
-          <td>Diversificar proveedores: Vietnam, India, Corea del Sur</td>
-        </tr>
-        <tr>
-          <td class="bold-cell">Disrupciones en cadena de suministro marítima</td>
-          <td>Operativo</td>
-          <td><span class="badge badge-gold">MEDIA</span></td>
-          <td><span class="badge badge-gold">MEDIO</span></td>
-          <td>Stock de seguridad (60–90 días), contratos con múltiples navieras</td>
-        </tr>
-        <tr>
-          <td class="bold-cell">No obtención certificaciones destino</td>
-          <td>Regulatorio</td>
-          <td><span class="badge badge-green">BAJA</span></td>
-          <td><span class="badge badge-red">MUY ALTO</span></td>
-          <td>Consultoría regulatoria local antes de exportar. Piloto con pequeño lote</td>
-        </tr>
-        <tr>
-          <td class="bold-cell">Conflictos geopolíticos (Estrecho Ormuz, Mar Rojo)</td>
-          <td>Geopolítico</td>
-          <td><span class="badge badge-gold">MEDIA</span></td>
-          <td><span class="badge badge-gold">MEDIO</span></td>
-          <td>Seguro de transporte amplio, rutas alternativas (Cabo Buena Esperanza)</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3>Aprovechamiento de la Posición Estratégica de España</h3>
-  <div class="callout">
-    España posee <strong>ventajas geopolíticas únicas en el sistema comercial global</strong> que pocas economías comparten simultáneamente: (1) acceso preferencial a 80+ mercados vía TLCs de la UE; (2) posición como puerta de entrada de productos asiáticos hacia el mercado europeo; (3) "softpower" cultural hacia 650 millones de hispanohablantes; (4) plataforma logística entre Europa y África (corredor económico IMEC); y (5) clima y posición geográfica para ser el mayor productor solar de la UE. Una PYME española que combine exportación de producto diferenciado (aceite, cosmética, vino) con importación estratégica (solares, electrónica) puede construir un modelo comercial de doble flujo altamente rentable.
-  </div>
-</section>
-
-<!-- 8. FUENTES -->
-<section class="section" id="fuentes">
-  <div class="section-tag">Sección 08</div>
-  <h2>Fuentes y Referencias</h2>
-  <p>El presente estudio ha sido elaborado a partir de datos estadísticos, informes institucionales y publicaciones de organismos nacionales e internacionales de referencia. A continuación se detallan las fuentes principales organizadas por categoría.</p>
-
-  <h4>Organismos Estadísticos y Comerciales Oficiales</h4>
-  <ul class="sources-list">
-    <li><span class="source-id">[1]</span> Ministerio de Industria, Comercio y Turismo (MINCOTUR) — <em>Estadísticas de Comercio Exterior 2024.</em> <a href="https://www.mincotur.gob.es" target="_blank">www.mincotur.gob.es</a></li>
-    <li><span class="source-id">[2]</span> Instituto Español de Comercio Exterior (ICEX) — <em>Informes de mercado por país y sector 2023–2024.</em> <a href="https://www.icex.es" target="_blank">www.icex.es</a></li>
-    <li><span class="source-id">[3]</span> Agencia Tributaria — AEAT — <em>Estadísticas de comercio exterior de España 2024.</em> <a href="https://www.agenciatributaria.es" target="_blank">www.agenciatributaria.es</a></li>
-    <li><span class="source-id">[4]</span> Eurostat — <em>International Trade in Goods Statistics (ITGS) 2023–2024.</em> <a href="https://ec.europa.eu/eurostat" target="_blank">ec.europa.eu/eurostat</a></li>
-    <li><span class="source-id">[5]</span> Organización Mundial del Comercio (OMC) — <em>World Trade Statistical Review 2024.</em> <a href="https://www.wto.org" target="_blank">www.wto.org</a></li>
-  </ul>
-
-  <h4>Bases de Datos Arancelarias y Regulatorias</h4>
-  <ul class="sources-list">
-    <li><span class="source-id">[6]</span> Comisión Europea — DG TAXUD — <em>TARIC Database (Integrated Tariff of the European Communities).</em> <a href="https://ec.europa.eu/taxation_customs/dds2/taric" target="_blank">ec.europa.eu/taxation_customs/taric</a></li>
-    <li><span class="source-id">[7]</span> ITC Trade Map (International Trade Centre) — <em>Estadísticas de exportación/importación por producto y país.</em> <a href="https://www.trademap.org" target="_blank">www.trademap.org</a></li>
-    <li><span class="source-id">[8]</span> Market Access Database (UE) — <em>Aranceles y barreras no arancelarias por mercado de destino.</em> <a href="https://madb.europa.eu" target="_blank">madb.europa.eu</a></li>
-  </ul>
-
-  <h4>Informes Sectoriales y de Mercado</h4>
-  <ul class="sources-list">
-    <li><span class="source-id">[9]</span> Grand View Research — <em>Natural & Organic Cosmetics Market Size & Growth Report, 2024–2029.</em> <a href="https://www.grandviewresearch.com" target="_blank">www.grandviewresearch.com</a></li>
-    <li><span class="source-id">[10]</span> IEA (International Energy Agency) — <em>Renewables 2024 — Analysis and forecasts to 2030.</em> <a href="https://www.iea.org" target="_blank">www.iea.org</a></li>
-    <li><span class="source-id">[11]</span> ANFACO-CECOPESCA / ASOLIVA — <em>Informe sector aceite de oliva exportaciones 2024.</em> <a href="https://www.asoliva.es" target="_blank">www.asoliva.es</a></li>
-    <li><span class="source-id">[12]</span> OEMV (Observatorio Español del Mercado del Vino) — <em>Exportaciones de vino español 2023–2024.</em> <a href="https://www.oemv.es" target="_blank">www.oemv.es</a></li>
-  </ul>
-
-  <h4>Logística y Transporte</h4>
-  <ul class="sources-list">
-    <li><span class="source-id">[13]</span> Puertos del Estado — <em>Estadísticas portuarias 2024.</em> <a href="https://www.puertos.es" target="_blank">www.puertos.es</a></li>
-    <li><span class="source-id">[14]</span> Freightos Baltic Index — <em>Container Freight Rate Index 2023–2024.</em> <a href="https://www.freightos.com" target="_blank">www.freightos.com</a></li>
-    <li><span class="source-id">[15]</span> World Bank — Logistics Performance Index 2023. <a href="https://lpi.worldbank.org" target="_blank">lpi.worldbank.org</a></li>
-  </ul>
-</section>
-
-<footer>
-  <p>ESTUDIO DE MERCADO — COMERCIO INTERNACIONAL ESPAÑA 2024–2025 · ELABORADO PARA TRABAJO FIN DE GRADO · GACI & TIM</p>
-  <p style="margin-top:8px;">Todos los datos han sido compilados de fuentes públicas de referencia. Los valores financieros son estimaciones con fines académicos.</p>
-</footer>
-
-<script>
-// ---- TABS ----
-function switchTab(btn, panelId) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(panelId).classList.add('active');
-}
-
-// ---- CHARTS ----
-Chart.defaults.font.family = "'IBM Plex Sans', sans-serif";
-Chart.defaults.color = '#6b6560';
-
-// Pie: Composición exportaciones
-new Chart(document.getElementById('chartExportPie'), {
-  type: 'doughnut',
-  data: {
-    labels: ['Alimentos y Bebidas', 'Automoción', 'Química y Farmacia', 'Maquinaria industrial', 'Textil y Moda', 'Otros'],
-    datasets: [{
-      data: [20, 16, 13, 11, 7, 33],
-      backgroundColor: ['#0d5c63','#b8860b','#8b3a0f','#2c3e50','#6b6560','#c8c4bc'],
-      borderWidth: 2,
-      borderColor: '#f5f2ec'
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { position: 'bottom', labels: { boxWidth: 12, padding: 14, font: { size: 11 } } }
-    }
-  }
-});
-
-// Line: Balanza comercial
-new Chart(document.getElementById('chartBalanza'), {
-  type: 'line',
-  data: {
-    labels: ['2019','2020','2021','2022','2023','2024'],
-    datasets: [
-      {
-        label: 'Exportaciones (€B)',
-        data: [294, 250, 311, 377, 364, 379],
-        borderColor: '#0d5c63', backgroundColor: 'rgba(13,92,99,0.1)',
-        tension: 0.35, fill: true, pointRadius: 4, borderWidth: 2
-      },
-      {
-        label: 'Importaciones (€B)',
-        data: [326, 271, 363, 490, 451, 446],
-        borderColor: '#b8860b', backgroundColor: 'rgba(184,134,11,0.08)',
-        tension: 0.35, fill: true, pointRadius: 4, borderWidth: 2,
-        borderDash: [5,3]
-      }
-    ]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    scales: { y: { ticks: { callback: v => '€' + v + 'B' } } },
-    plugins: { legend: { labels: { boxWidth: 12, font: { size: 11 } } } }
-  }
-});
-
-// Bar: CAGR proyectado
-new Chart(document.getElementById('chartCagr'), {
-  type: 'bar',
-  data: {
-    labels: ['Módulos\nSolares', 'Comp.\nIoT', 'Cosmética\nNatural', 'Frutas\nTropicales', 'API\nFarma', 'Azafrán', 'Aceite\nOliva', 'Calzado\nDesign', 'Textil\nTécnico', 'Vino DO'],
-    datasets: [{
-      label: 'CAGR 2024–2029 (%)',
-      data: [19.4, 14.7, 9.3, 8.9, 7.6, 7.1, 5.8, 4.7, 6.2, 3.2],
-      backgroundColor: ['#0d5c63','#0d5c63','#b8860b','#b8860b','#1a7a84','#b8860b','#b8860b','#6b6560','#1a7a84','#6b6560'],
-      borderRadius: 4, borderWidth: 0
-    }]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    indexAxis: 'y',
-    scales: {
-      x: { ticks: { callback: v => v + '%' }, grid: { color: 'rgba(0,0,0,0.05)' } },
-      y: { grid: { display: false }, ticks: { font: { size: 11 } } }
-    },
-    plugins: { legend: { display: false } }
-  }
-});
-
-// Bar horizontal: Márgenes
-new Chart(document.getElementById('chartMargen'), {
-  type: 'bar',
-  data: {
-    labels: ['Azafrán\n(retail)', 'Cosmética\nNatural', 'Aceite\nOliva Eco', 'Vino DO', 'Calzado\nPremium', 'Módulos\nSolares', 'Textil\nTécnico', 'Frutas\nTropicales'],
-    datasets: [
-      { label: 'Margen mínimo (%)', data: [200,45,35,40,30,15,12,30], backgroundColor: 'rgba(13,92,99,0.25)', borderRadius: 3 },
-      { label: 'Margen máximo (%)', data: [400,65,55,70,50,25,22,60], backgroundColor: '#0d5c63', borderRadius: 3 }
-    ]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    scales: {
-      x: { ticks: { callback: v => v + '%' }, stacked: false },
-      y: { grid: { display: false }, ticks: { font: { size: 10 } } }
-    },
-    plugins: { legend: { labels: { boxWidth: 10, font: { size: 11 } } } }
-  }
-});
-
-// Scatter/Bubble logística
-new Chart(document.getElementById('chartLogistica'), {
-  type: 'bar',
-  data: {
-    labels: ['ES→JAP', 'ES→MEX', 'ES→EAU', 'CHN→ES', 'VNM→ES', 'MAR→ES', 'IND→ES'],
-    datasets: [
-      {
-        label: 'Días de tránsito',
-        data: [32, 20, 22, 31, 28, 2, 25],
-        backgroundColor: 'rgba(184,134,11,0.7)', yAxisID: 'y', borderRadius: 4
-      },
-      {
-        label: 'Coste FCL 40\' (€ x100)',
-        data: [31, 18, 31, 20, 18, 8, 14],
-        backgroundColor: 'rgba(13,92,99,0.7)', yAxisID: 'y2', borderRadius: 4
-      }
-    ]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    scales: {
-      y: { type:'linear', position:'left', ticks: { callback: v => v + 'd' }, title: { display: true, text: 'Días' } },
-      y2: { type:'linear', position:'right', ticks: { callback: v => '€' + (v*100) }, grid: { drawOnChartArea: false }, title: { display: true, text: 'Coste' } }
-    },
-    plugins: { legend: { labels: { boxWidth: 10, font: { size: 11 } } } }
-  }
-});
-
-// Comparativa horizontal
-new Chart(document.getElementById('chartComparativa'), {
-  type: 'bar',
-  data: {
-    labels: ['Cosmética Natural (Exp)','Aceite Oliva Eco (Exp)','Módulos Solares (Imp)','Comp. IoT (Imp)','Vino DO (Exp)','API Farmacéut. (Imp)','Azafrán (Exp)','Textil Técnico (Imp)','Frutas Tropicales (Imp)','Calzado Premium (Exp)'],
-    datasets: [{
-      label: 'Score Global / 100',
-      data: [94, 92, 91, 89, 88, 87, 85, 83, 81, 80],
-      backgroundColor: function(ctx) {
-        const v = ctx.parsed.x;
-        if (v >= 92) return '#0d5c63';
-        if (v >= 88) return '#1a7a84';
-        if (v >= 85) return '#b8860b';
-        return '#6b6560';
-      },
-      borderRadius: 5, borderWidth: 0
-    }]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    indexAxis: 'y',
-    scales: {
-      x: { min: 70, max: 100, ticks: { font: { size: 11 } }, grid: { color: 'rgba(0,0,0,0.05)' } },
-      y: { grid: { display: false }, ticks: { font: { size: 11 } } }
-    },
-    plugins: { legend: { display: false } }
-  }
-});
-</script>
+    </footer>
 </body>
 </html>
